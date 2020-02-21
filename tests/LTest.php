@@ -12,4 +12,6 @@ class LTest extends TestCase
         $output = L::pdoError($stub);
         $this->assertEquals("Error in LoreSjoberg\L\L:13: This is the error.\n", $output);
     }
+
+
 }

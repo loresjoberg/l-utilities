@@ -1,5 +1,6 @@
 <?php namespace LoreSjoberg\L;
 
+use Cocur\Slugify\Slugify;
 use PDO;
 
 /**
@@ -17,10 +18,12 @@ class L
         $trace = debug_backtrace();
         $class = $trace[0]['class'];
         $line = $trace[0]['line'];
-//
-//        $class = __CLASS__;
-//        $line = __LINE__;
         $error = $pdo->errorInfo()[2];
         return "Error in {$class}:{$line}: {$error}\n";
+    }
+
+    public function slugify($text) {
+        $slugify = new Slugify();
+        return $slugify->slugify($text);
     }
 }
