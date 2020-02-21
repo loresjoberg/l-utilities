@@ -28,6 +28,7 @@ class L
     }
 
     public static function findRowBySlug($array, $slug) {
-        return array_search($slug, array_column($array, 'slug'));
+        $index = array_search($slug, array_column($array, 'slug'));
+        return $array[$index];
     }
 }
