@@ -22,12 +22,12 @@ class L
         return "Error in {$class}:{$line}: {$error}\n";
     }
 
-    public function slugify($text) {
+    public static function slugify($text) {
         $slugify = new Slugify();
         return $slugify->slugify($text);
     }
 
-    public function findRowBySlug($array, $slug) {
+    public static function findRowBySlug($array, $slug) {
         return array_search($slug, array_column($array, 'slug'));
     }
 }
