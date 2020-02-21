@@ -18,13 +18,19 @@ class LTest extends TestCase
     {
         $rows = [
             [
-                'id' => 9,
+                'id' => 8,
                 'slug' => 'ford-dip',
                 'moniker' => 'Ford DIP',
 
             ],
             [
                 'id' => 9,
+                'slug' => 'foo-bar',
+                'moniker' => 'Foo Bar',
+
+            ],
+            [
+                'id' => 10,
                 'slug' => 'iolta',
                 'moniker' => 'IOLTA',
 
@@ -32,6 +38,6 @@ class LTest extends TestCase
         ];
 
         $row = L::findRowBySlug($rows, 'iolta');
-        $this->assertEquals($rows[1], $row);
+        $this->assertEquals($rows[2], $row);
     }
 }
