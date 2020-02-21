@@ -29,6 +29,9 @@ class L
 
     public static function findRowBySlug($array, $slug) {
         $index = array_search($slug, array_column($array, 'slug'));
+        if ($index === false){
+            return false;
+        }
         return $array[$index];
     }
 }
