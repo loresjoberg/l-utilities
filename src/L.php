@@ -27,6 +27,18 @@ class L
         return "Error in {$class}:{$line}: {$error}\n";
     }
 
+    /**
+     * @param PDO|PDOStatement $pdo
+     */
+    public static function pdoDie($pdo)
+    {
+        $trace = debug_backtrace();
+        $class = $trace[0]['file'];
+        $line = $trace[0]['line'];
+        $error = $pdo->errorInfo()[2];
+        die("Error in {$class}:{$line}: {$error}\n");
+    }
+
     public static function slugify($text) {
         $slugify = new Slugify();
         return $slugify->slugify($text);
