@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 class LTest extends TestCase
 {
-    public function testPdoDie()
+    public function testPdoError()
     {
         $stub = $this->createStub(PDO::class);
         $stub->method('errorInfo')->willReturn(['', '', 'This is the error.']);

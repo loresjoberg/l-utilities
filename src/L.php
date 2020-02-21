@@ -2,6 +2,7 @@
 
 use Cocur\Slugify\Slugify;
 use PDO;
+use PDOStatement;
 
 /**
  *  A sample class
@@ -13,7 +14,11 @@ use PDO;
 class L
 {
 
-    public static function pdoError(PDO $pdo): string
+    /**
+     * @param PDO|PDOStatement $pdo
+     * @return string
+     */
+    public static function pdoError($pdo): string
     {
         $trace = debug_backtrace();
         $class = $trace[0]['class'];
