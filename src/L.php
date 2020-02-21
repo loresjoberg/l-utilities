@@ -26,4 +26,8 @@ class L
         $slugify = new Slugify();
         return $slugify->slugify($text);
     }
+
+    public function findRowBySlug($array, $slug) {
+        return array_search($slug, array_column($array, 'slug'));
+    }
 }
